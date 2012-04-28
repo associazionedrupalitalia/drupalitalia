@@ -1,7 +1,7 @@
 name = Drupalitalia Forum
 description = drupalitalia.org forum feature
 core = 7.x
-package = Drupalitalia, Features, Forum
+package = Drupalitalia
 php = 5.2.4
 version = 7.x-1.0
 project = drupalitalia_forum
