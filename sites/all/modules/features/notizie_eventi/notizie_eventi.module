@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the notizie_eventi feature.
+ */
+
+include_once 'notizie_eventi.features.inc';
