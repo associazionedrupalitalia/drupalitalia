@@ -1,0 +1,6 @@
+name = Drupalitalia utilities
+description = custom functionalities to adminster and maintain drupalitalia.org
+core = 7.x
+package = Drupalitalia
+version = 7.x-1.0
+configure = admin/config/drupalitalia/settings

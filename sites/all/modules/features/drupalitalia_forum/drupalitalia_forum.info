@@ -1,0 +1,16 @@
+name = Drupalitalia Forum
+description = drupalitalia.org forum feature
+core = 7.x
+package = Features, Forum
+version = 7.x-1.0
+project = drupalitalia_forum
+dependencies[] = features
+dependencies[] = forum
+dependencies[] = taxonomy
+features[features_api][] = api:1
+features[field][] = node-forum-body
+features[field][] = node-forum-taxonomy_forums
+features[filter][] = 1
+features[taxonomy][] = vocabulary_14
+features[taxonomy][] = vocabulary_2
+features[user_role][] = moderatore

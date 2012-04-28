@@ -1,0 +1,107 @@
+<?php
+/**
+ * @file
+ * drupalitalia.org administration functionalities.
+ */
+define('DRUPALITALIA_UTILITIES_ARCHIVE_SECTION_TAXONOMY_ID', 56);
+define('DRUPALITALIA_UTILITIES_NODE_ARCHIVE_LIMIT', 1000);
+
+/**
+ * Implements hook_menu().
+ */
+function drupalitalia_utilities_menu() {
+  $items = array();
+  $items['admin/config/drupalitalia'] = array(
+    'title' => 'Drupalitalia',
+    'description' => 'Tools related to drupalitalia.org website.',
+    'position' => 'right',
+    'weight' => 0,
+    'page callback' => 'drupalitalia_utilities_admin_menu_block_page',
+    'access arguments' => array('access administration pages'),
+    'file' => 'drupalitalia.admin.inc',
+  );
+  $items['admin/config/drupalitalia/batch_tasks'] = array(
+    'title' => 'Batch Tasks',
+    'description' => 'Batch tasks for the drupalitalia.org website',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('drupalitalia_utilities_simple_form'),
+    'access callback' => TRUE,
+  );
+
+  return $items;
+}
+
+/**
+ * Form builder function to allow choice of which batch to run.
+ */
+function drupalitalia_utilities_simple_form() {
+  $form['description'] = array(
+    '#type' => 'markup',
+    '#markup' => t('This list allows to do some batch operations on the database.'),
+  );
+  $form['batch'] = array(
+    '#type' => 'select',
+    '#title' => 'Choose batch',
+    '#options' => array(
+      'batch_1' => t('batch 1 - archive forum topics older than one year'),
+    ),
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Go',
+  );
+
+  return $form;
+}
+
+function drupalitalia_utilities_simple_form_submit($form, &$form_state) {
+  $function = 'drupalitalia_utilities_' . $form_state['values']['batch'];
+
+  $_SESSION['http_request_count'] = 0; // reset counter for debug information.
+
+  // Execute the function named drupalitalia_utilities_batch_1 or drupalitalia_utilities_batch_2.
+  $batch = $function();
+  batch_set($batch);
+}
+
+function drupalitalia_utilities_batch_1() {
+  $operations = array();
+  $results = db_query('SELECT nid FROM {node} WHERE type = \'forum\' AND changed < UNIX_TIMESTAMP(NOW() - INTERVAL 1 YEAR)');
+  $nids = array();
+  $i = 0;
+
+  foreach ($results as $result) {
+    $nids[] = $result->nid;
+    if ($i < DRUPALITALIA_UTILITIES_NODE_ARCHIVE_LIMIT) {
+      ++$i;
+    } else {
+      $operations[] = array('drupalitalia_utilities_op_1', array($nids));
+      $nids = array();
+      $i = 0;
+    }
+  }
+  return array(
+    'operations' => $operations,
+  );
+}
+
+function drupalitalia_utilities_op_1(array $nids) {
+  foreach ($nids as $nid) {
+    $node = node_load($nid);
+
+    if (empty($node)) {
+      continue;
+    }
+
+    if ($node->forum_tid == DRUPALITALIA_UTILITIES_ARCHIVE_SECTION_TAXONOMY_ID) {
+      continue;
+    }
+
+    db_query('DELETE FROM {forum} WHERE nid = :nid', array(':nid' => $nid));
+
+    $node->taxonomy_forums[LANGUAGE_NONE][0]['tid'] = DRUPALITALIA_UTILITIES_ARCHIVE_SECTION_TAXONOMY_ID;
+    $node->forum_tid = DRUPALITALIA_UTILITIES_ARCHIVE_SECTION_TAXONOMY_ID;
+
+    node_save($node);
+  }
+}
