@@ -29,6 +29,7 @@ projects[references][subdir] = "contrib"
 projects[strongarm][subdir] = "contrib"
 projects[token][subdir] = "contrib"
 projects[views][subdir] = "contrib"
+projects[mollom][subdir] = "contrib"
 
 ;;; Optional
 ;projects[auto_nodetitle][subdir] = "contrib"
