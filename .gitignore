@@ -3,7 +3,6 @@ sites/default/private
 sites/default/settings.php
 cache/
 files/
-/modules/
 /README.txt
 /CHANGELOG.txt
 /COPYRIGHT.txt
@@ -28,7 +27,7 @@ update.php
 xmlrpc.php
 /includes
 /misc
-/modules     
+/modules
 /profiles
 /scripts
 /themes

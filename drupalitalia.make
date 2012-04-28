@@ -29,8 +29,6 @@ projects[references][subdir] = "contrib"
 projects[strongarm][subdir] = "contrib"
 projects[token][subdir] = "contrib"
 projects[views][subdir] = "contrib"
-projects[mollom][subdir] = "contrib"
-projects[link][subdir] = "contrib"
 
 ;;; Optional
 ;projects[auto_nodetitle][subdir] = "contrib"
@@ -53,9 +51,9 @@ projects[link][subdir] = "contrib"
 ;projects[omega_tools][subdir] = "contrib"
 ;projects[omega_tools][version] = 3.0-rc4
 ;projects[rules][subdir] = "contrib"
-;projects[strongarm][subdir] = "contrib"
-;projects[strongarm][version] = 2.0-rc1
-;projects[variable][subdir] = "contrib"
+projects[strongarm][subdir] = "contrib"
+projects[strongarm][version] = 2.0-rc1
+projects[variable][subdir] = "contrib"
 ;projects[webform][subdir] = "contrib"
 
 ;;; SEO
@@ -83,12 +81,12 @@ projects[devel_themer][subdir] = "devel"
 
 
 ;; L10n
-;projects[i18n][subdir] = "l10n"
+projects[i18n][subdir] = "l10n"
 ;projects[languageicons][subdir] = "l10n"
-;projects[translation_helpers][subdir] = "l10n"
-;projects[translation_overview][subdir] = "l10n"
-;projects[translation_management][subdir] = "l10n"
-;projects[transliteration][subdir] = "l10n"
+projects[translation_helpers][subdir] = "l10n"
+projects[translation_overview][subdir] = "l10n"
+projects[translation_management][subdir] = "l10n"
+projects[transliteration][subdir] = "l10n"
 
 
 ; Themes
