@@ -3,6 +3,7 @@ sites/default/private
 sites/default/settings.php
 cache/
 files/
+modules/
 /README.txt
 /CHANGELOG.txt
 /COPYRIGHT.txt
@@ -15,6 +16,8 @@ sites/all/README.txt
 sites/all/modules/README.txt
 sites/all/themes/README.txt
 .htaccess
+authorize.php
+web.config
 
 #for non core developer
 #only include "sites" folder without exclusions before
@@ -29,4 +32,8 @@ xmlrpc.php
 /profiles
 /scripts
 /themes
-
+/sites/all/modules/contrib
+/sites/all/modules/devel
+/sites/all/themes/
+/sites/default
+/sites/example.sites.php
