@@ -14,8 +14,8 @@ projects[] = "drupal"
 ;projects[taxonomy_manager][subdir] = "contrib"
 
 ;;; Core
-projects[boxes][subdir] = "contrib"
-projects[boxes][version] = 1.0-beta8
+;projects[boxes][subdir] = "contrib"
+;projects[boxes][version] = 1.0-beta8
 projects[ctools][subdir] = "contrib"
 projects[context][subdir] = "contrib"
 projects[date][subdir] = "contrib"
@@ -26,16 +26,20 @@ projects[field_permissions][subdir] = "contrib"
 projects[link][subdir] = "contrib"
 projects[pathauto][subdir] = "contrib"
 projects[references][subdir] = "contrib"
+projects[rules][subdir] = "contrib"
 projects[strongarm][subdir] = "contrib"
 projects[token][subdir] = "contrib"
 projects[views][subdir] = "contrib"
 
 ;;; Optional
+projects[addressfield][subdir] = "contrib"
 projects[advanced_forum][subdir] = "contrib"
 projects[advanced_forum_more_styles][subdir] = "contrib"
 ;projects[auto_nodetitle][subdir] = "contrib"
 ;projects[block_class][subdir] = "contrib"
 ;projects[block_class][version] = 1.1
+;projects[codefilter][subdir] = "contrib"
+projects[contact_forms][subdir] = "contrib"
 ;projects[defaultcontent][subdir] = "contrib"
 ;projects[defaultcontent][version] = 1.0-alpha6
 ;projects[delta][subdir] = "contrib"
@@ -44,24 +48,38 @@ projects[advanced_forum_more_styles][subdir] = "contrib"
 ;projects[colorbox][subdir] = "contrib"
 ;projects[filefield_paths][subdir] = "contrib"
 ;projects[globalredirect][subdir] = "contrib"
-;projects[google_analytics][subdir] = "contrib"
 ;projects[hierarchical_select][subdir] = "contrib"
 ;projects[jquery_update][subdir] = "contrib"
-;projects[panels][subdir] = "contrib"
+projects[legal][subdir] = "contrib"
+projects[mailchimp][subdir] = "contrib"
+projects[mollom][subdir] = "contrib"
 ;projects[nodequeue][subdir] = "contrib"
 ;projects[nodequeue][version] = 2.0-beta1
 ;projects[omega_tools][subdir] = "contrib"
 ;projects[omega_tools][version] = 3.0-rc4
-;projects[rules][subdir] = "contrib"
+;projects[panels][subdir] = "contrib"
+projects[quote][subdir] = "contrib"
+projects[rules_link][subdir] = "contrib"
+projects[schema][subdir] = "contrib"
+projects[smtp][subdir] = "contrib"
+projects[social-share][subdir] = "contrib"
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = 2.0-rc1
 projects[variable][subdir] = "contrib"
 ;projects[webform][subdir] = "contrib"
 
+;; Commerce
+projects[commerce][subdir] = "contrib"
+projects[commerce_bank_transfer][subdir] = "contrib"
+projects[commerce_features][subdir] = "contrib"
+projects[commerce_paypal][subdir] = "contrib"
+projects[commerce_sp][subdir] = "contrib"
+
+
 ;;; SEO
-;projects[google_analytics][subdir] = "contrib"
+projects[google_analytics][subdir] = "contrib"
 ;projects[metatags_quick][subdir] = "contrib"
-;projects[xmlsitemap][subdir] = "contrib"
+projects[xmlsitemap][subdir] = "contrib"
 
 ;;; Editor
 ;projects[imce][subdir] = "contrib"
@@ -80,11 +98,15 @@ projects[devel_themer][subdir] = "devel"
 ;projects[performance][subdir] = "devel"
 
 ;; Features
-
+;projects[drupalitalia_forum][subdir] = "features"
+;projects[drupalitalia_user_fields][subdir] = "features"
+;projects[association_verbal][subdir] = "features"
+;projects[notizie_eventi][subdir] = "features"
 
 ;; L10n
 projects[i18n][subdir] = "l10n"
 ;projects[languageicons][subdir] = "l10n"
+projects[l10n_update][subdir] = "l10n"
 projects[translation_helpers][subdir] = "l10n"
 projects[translation_overview][subdir] = "l10n"
 projects[translation_management][subdir] = "l10n"

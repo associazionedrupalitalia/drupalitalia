@@ -10,6 +10,46 @@
 function drupalitalia_forum_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: access rules link block_forum_comment_author.
+  $permissions['access rules link block_forum_comment_author'] = array(
+    'name' => 'access rules link block_forum_comment_author',
+    'roles' => array(
+      0 => 'amministratore',
+      1 => 'moderatore',
+    ),
+    'module' => 'rules_link',
+  );
+
+  // Exported permission: access rules link block_forum_topic_author.
+  $permissions['access rules link block_forum_topic_author'] = array(
+    'name' => 'access rules link block_forum_topic_author',
+    'roles' => array(
+      0 => 'amministratore',
+      1 => 'moderatore',
+    ),
+    'module' => 'rules_link',
+  );
+
+  // Exported permission: access rules link unblock_forum_comment_author.
+  $permissions['access rules link unblock_forum_comment_author'] = array(
+    'name' => 'access rules link unblock_forum_comment_author',
+    'roles' => array(
+      0 => 'amministratore',
+      1 => 'moderatore',
+    ),
+    'module' => 'rules_link',
+  );
+
+  // Exported permission: access rules link unblock_forum_topic_author.
+  $permissions['access rules link unblock_forum_topic_author'] = array(
+    'name' => 'access rules link unblock_forum_topic_author',
+    'roles' => array(
+      0 => 'amministratore',
+      1 => 'moderatore',
+    ),
+    'module' => 'rules_link',
+  );
+
   // Exported permission: administer advanced forum.
   $permissions['administer advanced forum'] = array(
     'name' => 'administer advanced forum',
@@ -87,8 +127,6 @@ function drupalitalia_forum_user_default_permissions() {
       2 => 'authenticated user',
       3 => 'moderatore',
       4 => 'redattore',
-      5 => 'traduttore',
-      6 => 'utente powered',
     ),
     'module' => 'filter',
   );

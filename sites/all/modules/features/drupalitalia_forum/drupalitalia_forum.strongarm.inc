@@ -49,14 +49,14 @@ function drupalitalia_forum_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'advanced_forum_forum_image_preset';
-  $strongarm->value = 'medium';
+  $strongarm->value = '';
   $export['advanced_forum_forum_image_preset'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'advanced_forum_get_new_comments';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['advanced_forum_get_new_comments'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -70,7 +70,7 @@ function drupalitalia_forum_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'advanced_forum_stats_replies';
-  $strongarm->value = '65165';
+  $strongarm->value = '63457';
   $export['advanced_forum_stats_replies'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -93,7 +93,7 @@ function drupalitalia_forum_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'advanced_forum_style_all_comments';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['advanced_forum_style_all_comments'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -107,7 +107,7 @@ function drupalitalia_forum_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'advanced_forum_style_teasers';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['advanced_forum_style_teasers'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -105,3 +105,56 @@ function drupalitalia_utilities_op_1(array $nids) {
     node_save($node);
   }
 }
+
+/**
+ * @see hook_action_info()
+ */
+function drupalitalia_utilities_rules_action_info() {
+  $defaults = array(
+   'parameter' => array(
+      'account' => array(
+        'type' => 'user',
+        'label' => t('User'),
+        'save' => TRUE,
+      ),
+    ),
+    'group' => t('User'),
+    'access callback' => 'rules_user_integration_access',
+  );
+  $items['unpublish_user_contents_action'] = $defaults + array(
+    'label' => t('Unpublish all user\'s contents'),
+    'base' => 'drupalitalia_utilities_unpublish_user_contents_action',
+  );
+  $items['publish_user_contents_action'] = $defaults + array(
+    'label' => t('Publish all user\'s contents'),
+    'base' => 'drupalitalia_utilities_publish_user_contents_action',
+  );
+  return $items;
+}
+
+function drupalitalia_utilities_unpublish_user_contents_action($account) {
+  _drupalitalia_utilities_user_contents_action_helper($account, 0, 'Unpublished all %name\'s contents.');
+}
+
+function drupalitalia_utilities_publish_user_contents_action($account) {
+  _drupalitalia_utilities_user_contents_action_helper($account, 1, 'Published all %name\'s contents.');
+}
+
+/**
+ * Helper function for publishing/unpublishing contents
+ */
+function _drupalitalia_utilities_user_contents_action_helper($account, $status, $message) {
+  if (isset($account->uid)) {
+    $uid = $account->uid;
+  } else {
+    return;
+  }
+
+  $num_updated = db_update('node')
+    ->fields(array('status' => $status))
+    ->condition('uid', $uid)
+    ->execute();
+
+  watchdog('rules action', 'Published all %name\'s contents.', array('%name' => $account->name));
+  drupal_set_message(t('Published all %name\'s contents.', array('%name' => $account->name)));
+}
