@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Drupalitalia Soci registration feature.
+ */
+
+include_once 'drupalitalia_soci_registration.features.inc';
