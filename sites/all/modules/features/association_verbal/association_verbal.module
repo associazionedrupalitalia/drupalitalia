@@ -11,9 +11,21 @@ include_once 'association_verbal.features.inc';
  */
 function association_verbal_permission() {
   return array(
+    'create verbali content' => array(
+      'title' => t('Create verbal content'),
+      'description' => t('Enable users to create verbals.'),
+    ),
+    'update verbali content' => array(
+      'title' => t('Update verbal content'),
+      'description' => t('Enable users to update verbals.'),
+    ),
+    'delete verbali content' => array(
+      'title' => t('Delete verbal content'),
+      'description' => t('Enable users to delete verbals.'),
+    ),
     'view verbali content' => array(
       'title' => t('View verbal content'),
-      'description' => t('Enable users to read verbals.'),
+      'description' => t('Enable users to view verbals.'),
     ),
   );
 }
@@ -25,8 +37,8 @@ function association_verbal_permission() {
 function association_verbal_node_access($node, $op, $account) {
   $type = is_string($node) ? $node : $node->type;
 
-  if ($type == 'verbali' && $op == 'view') {
-    if (user_access('view verbali content', $account)) {
+  if ($type == 'verbali') {
+    if (user_access($op . ' verbali content', $account)) {
       return NODE_ACCESS_ALLOW;
     }
     else {
