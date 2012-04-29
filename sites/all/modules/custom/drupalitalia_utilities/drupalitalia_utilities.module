@@ -144,7 +144,7 @@ function drupalitalia_utilities_publish_user_contents_action($account) {
  * Helper function for publishing/unpublishing contents
  */
 function _drupalitalia_utilities_user_contents_action_helper($account, $status, $message) {
-  if (isset($account->uid)) {
+  if (isset($account->uid) && $account->uid > 0) {
     $uid = $account->uid;
   } else {
     return;
