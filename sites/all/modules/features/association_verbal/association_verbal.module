@@ -7,13 +7,26 @@
 include_once 'association_verbal.features.inc';
 
 /**
+ * Implements hook_permission().
+ */
+function association_permission() {
+  return array(
+    'view verbali content' => array(
+      'title' => t('View verbal content'),
+      'description' => t('Enable users to read verbals.'),
+    ),
+  );
+}
+
+
+/**
  * Implements hook_node_access().
  */
 function association_verbal_node_access($node, $op, $account) {
   $type = is_string($node) ? $node : $node->type;
 
   if ($type == 'verbali' && $op == 'view') {
-    if (user_access('read verbali content', $account)) {
+    if (user_access('view verbali content', $account)) {
       return NODE_ACCESS_ALLOW;
     }
     else {
