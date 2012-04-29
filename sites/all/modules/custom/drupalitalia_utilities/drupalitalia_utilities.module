@@ -155,6 +155,11 @@ function _drupalitalia_utilities_user_contents_action_helper($account, $status, 
     ->condition('uid', $uid)
     ->execute();
 
-  watchdog('rules action', 'Published all %name\'s contents.', array('%name' => $account->name));
-  drupal_set_message(t('Published all %name\'s contents.', array('%name' => $account->name)));
+  $settings = array(
+    '%message' => $status ? 'Published' : 'Unpublished',
+    '%name'    => $account->name
+  );
+
+  watchdog('rules action', '%status all %name\'s contents.', $settings);
+  drupal_set_message(t('%status all %name\'s contents.', $settings));
 }
