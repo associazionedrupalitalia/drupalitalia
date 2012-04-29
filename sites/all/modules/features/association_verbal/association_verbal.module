@@ -1,0 +1,26 @@
+<?php
+/**
+ * @file
+ * Code for the Verbaili feature.
+ */
+
+include_once 'association_verbal.features.inc';
+
+/**
+ * Implements hook_node_access().
+ */
+function association_verbal_node_access($node, $op, $account) {
+  $type = is_string($node) ? $node : $node->type;
+
+  if ($type == 'verbali' && $op == 'view') {
+    if (user_access('read verbali content', $account)) {
+      return NODE_ACCESS_ALLOW;
+    }
+    else {
+      return NODE_ACCESS_DENY;
+    }
+  }
+
+  // Returning nothing from this function would have the same effect.
+  return NODE_ACCESS_IGNORE;
+}
