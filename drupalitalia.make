@@ -31,6 +31,8 @@ projects[token][subdir] = "contrib"
 projects[views][subdir] = "contrib"
 
 ;;; Optional
+projects[advanced_forum][subdir] = "contrib"
+projects[advanced_forum_more_styles][subdir] = "contrib"
 ;projects[auto_nodetitle][subdir] = "contrib"
 ;projects[block_class][subdir] = "contrib"
 ;projects[block_class][version] = 1.1
