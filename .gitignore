@@ -1,39 +1,96 @@
-sites/default/files
-sites/default/private
-sites/default/settings.php
-cache/
-files/
-/README.txt
-/CHANGELOG.txt
-/COPYRIGHT.txt
-/INSTALL*.txt
-/LICENSE.txt
-/MAINTAINERS.txt
-/UPGRADE.txt
-robots.txt
-sites/all/README.txt
-sites/all/modules/README.txt
-sites/all/themes/README.txt
-.htaccess
-authorize.php
-web.config
-
-#for non core developer
-#only include "sites" folder without exclusions before
-cron.php
-index.php
-install.php
-update.php
-xmlrpc.php
+# Specific drupal files
+/?*.txt
+/?*.php
+/backups
+/dumps
 /includes
 /misc
 /modules
-/profiles
+/profiles/minimal
+/profiles/standard
+/profiles/testing
 /scripts
 /themes
-/sites/all/modules/contrib
-/sites/all/modules/devel
-/sites/all/themes/
-/sites/default
-/sites/example.sites.php
-/sites/drupalitalia.org
+/logs
+sites/all/vendor
+sites/all/libraries
+sites/all/modules/contrib
+sites/all/modules/devel/*
+!sites/all/modules/devel/fixtures
+sites/all/themes/omega
+sites/all/themes/*/css
+sites/all/*.txt
+sites/all/*/*.txt
+sites/example.sites.php
+sites/default
+sites/*.txt
+
+# Ignore configuration files that may contain sensitive information.
+sites/*/settings*.php
+!sites/dev/settings.php
+!sites/stage/settings.php
+
+# Ignore paths that contain user-generated content.
+sites/*/files
+sites/*/private
+
+# Third party libraries and tools #
+/bin
+/reports
+/vendor
+composer.lock
+behat.yml
+
+# Module downloads #
+####################
+/FirePHPCore
+
+# Editor generated files #
+##########################
+*~
+*.bak
+*.old
+*.tmp
+*.temp
+netbeans
+*.sublime-*
+*.idea
+
+# Webserver files #
+###################
+.htaccess
+web.config
+
+# OS generated files #
+######################
+.DS_Store
+ehthumbs.db
+Icon?
+!sites/all/themes/elite_ee/images/icons*
+Thumbs.db
+
+# Logs #
+########
+*.log
+
+# Configuration #
+#################
+config.cfg
+
+# DB Dumps #
+############
+*.sql
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+*.ruby-version
+*.bundle/
