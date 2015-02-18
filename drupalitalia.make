@@ -124,8 +124,8 @@ projects[rules][version] = "2.8"
 projects[smtp][subdir] = "contrib"
 projects[smtp][version] = "1.2"
 
-projects[social_share][subdir] = "contrib"
-projects[social_share][version] = "1.10"
+projects[social-share][subdir] = "contrib"
+projects[social-share][version] = "1.10"
 
 projects[superfish][subdir] = "contrib"
 projects[superfish][version] = "1.9"
