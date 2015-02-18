@@ -66,7 +66,6 @@ web.config
 .DS_Store
 ehthumbs.db
 Icon?
-!sites/all/themes/elite_ee/images/icons*
 Thumbs.db
 
 # Logs #
