@@ -64,8 +64,8 @@ projects[entity][version] = "1.5"
 projects[entity_bundle_plugin][subdir] = "contrib"
 projects[entity_bundle_plugin][version] = "1.0-beta2"
 
-projects[entity_reference][subdir] = "contrib"
-projects[entity_reference][version] = "1.1"
+projects[entityreference][subdir] = "contrib"
+projects[entityreference][version] = "1.1"
 
 projects[facetapi][subdir] = "contrib"
 projects[facetapi][version] = "1.5"
@@ -85,8 +85,8 @@ projects[google_analytics][version] = "1.4"
 projects[honeypot][subdir] = "contrib"
 projects[honeypot][version] = "1.17"
 
-projects[i18n_update][subdir] = "contrib"
-projects[i18n_update][version] = "1.12"
+projects[i18n][subdir] = "contrib"
+projects[i18n][version] = "1.12"
 
 projects[l10n_update][subdir] = "contrib"
 projects[l10n_update][version] = "1.1"
