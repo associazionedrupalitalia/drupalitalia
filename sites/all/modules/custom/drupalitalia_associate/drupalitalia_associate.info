@@ -1,0 +1,4 @@
+name = DrupalItalia Associate
+description = Create a commerca pane to ad user field
+group = DrupalItalia
+core = 7.x

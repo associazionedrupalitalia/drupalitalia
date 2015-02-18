@@ -44,6 +44,16 @@ function drupalitalia_forum_filter_default_formats() {
         'status' => '1',
         'settings' => array(),
       ),
+      'codefilter' => array(
+        'weight' => '0',
+        'status' => '1',
+        'settings' => array(),
+      ),
+      'quote' => array(
+        'weight' => '0',
+        'status' => '1',
+        'settings' => array(),
+      ),
     ),
   );
 

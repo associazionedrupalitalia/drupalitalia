@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_commerce_customer_profile_type_info().
+ */
+function drupalitalia_associate_commerce_customer_profile_type_info() {
+  $profile_types = array();
+
+  $profile_types['user_profile'] = array(
+    'type' => 'user_profile',
+    'name' => t('User profile information'),
+    'description' => t('The user profile container.'),
+    'help' => '',
+  );
+
+  return $profile_types;
+}
