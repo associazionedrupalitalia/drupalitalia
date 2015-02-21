@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the dio_news feature.
+ */
+
+include_once 'dio_news.features.inc';

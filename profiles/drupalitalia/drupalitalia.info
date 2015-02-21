@@ -121,4 +121,6 @@ dependencies[] = views_ui
 dependencies[] = xmlsitemap
 dependencies[] = xmlsitemap_node
 
+dependencies[] = dio_news
+
 theme = droopalitalia
