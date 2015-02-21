@@ -126,5 +126,6 @@ dependencies[] = dio_news
 dependencies[] = dio_glossary
 dependencies[] = dio_minutes
 dependencies[] = dio_forum
+dependencies[] = dio_user
 
 theme = droopalitalia

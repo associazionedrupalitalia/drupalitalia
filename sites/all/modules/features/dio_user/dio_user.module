@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the dio_user feature.
+ */
+
+include_once 'dio_user.features.inc';

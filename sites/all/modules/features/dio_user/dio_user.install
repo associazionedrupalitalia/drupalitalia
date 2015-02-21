@@ -1,0 +1,89 @@
+<?php
+/**
+ * @file
+ * Drupal needs this blank file.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function dio_user_install() {
+  $toc = <<<TOC
+<h3>Responsabilità individuale dei contenuti inseriti nel sito - Moderazione dei contenuti</h3>
+
+ <ul>
+   <li>L'utente si assume la completa responsabilità di ciò che inserisce all'interno del sito.</li>
+   <li>Le informazioni inserite come contenuti del sito sono rese pubbliche e, nel caso di informazioni riservate contenute nel profilo utente, potranno essere consegnate su richiesta delle autorità giudiziarie</li>
+   <li>In ogni caso lo staff di gestori e moderatori del sito non si assume l'obbligo di rimuovere le informazioni inserite dall'utente: eventuali richieste di rimozione, da parte dell'autore o da parte di terzi che si ritengano chiamati in causa, saranno valutate caso per caso dallo staff.</li>
+   <li>Lo staff si assume il compito di moderare le discussioni che avvengono all'interno del sito, pertanto potrà rimuovere/bloccare/modificare le informazioni inserite dagli utenti in qualsiasi momento.</li>
+   <li>L'elenco degli utenti abilitati alla moderazione e alla gestione dei contenuti è visualizzabile in una pagina del sito per facilitare i contatti; in alternativa, è possibile scrivere un messaggio e-mail a staff@drupalitalia.org. Quest'ultimo indirizzo e-mail deve essere usato esclusivamente per comunicazioni che riguardano il sito, il suo funzionamento e la moderazione dei contenuti e non può essere usato per richiedere assistenza su qualsiasi argomento già trattato nel forum.</li>
+ </ul>
+
+ <h3>Informativa ai sensi dell'art. 13 D.L. 30/06/2003</h3>
+
+ <h4>"Codice in materia di protezione dei dati personali"</h4>
+
+ Spett. utente,
+ ai sensi dell'art. 13 D. Lgs. 30.06.2003 n. 196 "Codice in materia di protezione dei dati personali", la scrivente associazione informa che i dati personali acquisiti direttamente e/o tramite terzi dall'Associazione Drupal Italia, titolare del trattamento, vengono trattati in forma cartacea, informatica, telematica per esigenze contrattuali e di legge, nonché per consentire un'efficace gestione dei rapporti associativi.
+
+ Gli indirizzi di posta elettronica forniti verranno utilizzati dall'Associazione esclusivamente per comunicazioni relative all'organizzazione ed al funzionamento della comunità, oppure per informazioni relative a iniziative organizzate o promosse dall'Associazione stessa nell'ambito del suo scopo sociale (vd. <a href="http://associazione.drupalitalia.org/statuto">art. 3 dello Statuto</a>).
+
+ Il mancato conferimento dei dati, ove non obbligatorio, verrà valutato di volta in volta dall'Associazione Drupal Italia, titolare del trattamento, e determinerà le conseguenti decisioni rapportate all'importanza dei dati richiesti rispetto alla gestione del rapporto.
+
+ I dati potranno essere comunicati in Italia e/o all'estero esclusivamente per le finalità sopra indicate e trattati solo a tali fini, ad altri soggetti quali:
+
+ <ul>
+   <li>nostri soci effettivi incaricati dall'Associazione stessa</li>
+ </ul>
+
+ L'interessato potrà esercitare tutti i diritti di cui all'art. 7 del D. Lgs. 30.06.2003 n. 196 (tra cui i diritti di accesso, rettifica, aggiornamento, di opposizione al trattamento e di cancellazione) contattando l'Associazione Drupal Italia tramite il modulo di contatto di questo sito o Raccomandata A/R inviata presso la sede dell'associazione stessa.
+
+ <h4>Art. 7 (Diritto di accesso ai dati personali ed altri diritti)</h4>
+ <ol>
+ <li>L'interessato ha diritto di ottenere la conferma dell'esistenza o meno di dati personali che lo riguardano, anche se non ancora registrati, e la loro comunicazione in forma intelligibile.</li>
+ <li>L'interessato ha diritto di ottenere l'indicazione:
+   <ol><li>dell'origine dei dati personali</li>
+          <li>delle finalità e modalità del trattamento</li>
+          <li>della logica applicata in caso di trattamento effettuato con l'ausilio di strumenti elettronici</li>
+          <li>degli estremi identificativi del titolare, dei responsabili e del rappresentante designato ai sensi dell'articolo 5, comma 2</li>
+          <li> dei soggetti o delle categorie di soggetti ai quali i dati personali possono essere comunicati o che possono venirne a conoscenza in qualità di rappresentante designato nel territorio dello Stato, di responsabili o incaricati.</li>
+   </ol>
+ </li>
+    <li> L'interessato ha diritto di ottenere:
+          <ol><li>l'aggiornamento, la rettificazione ovvero, quando vi ha interesse, l'integrazione dei dati</li>
+         <li>la cancellazione, la trasformazione in forma anonima o il blocco dei dati trattati in violazione di legge, compresi quelli di cui non è necessaria la conservazione in relazione agli scopi per i quali i dati sono stati raccolti o successivamente trattati</li>
+          <li>l'attestazione che le operazioni di cui ai punti 2.1 e 2.2 sono state portate a conoscenza, anche per quanto riguarda il loro contenuto, di coloro ai quali i dati sono stati comunicati o diffusi, eccettuato il caso in cui tale adempimento si rivela impossibile o comporta un impiego di mezzi manifestamente sproporzionato rispetto al diritto tutelato.</li>
+ </ol>
+ </li>
+ <li>L'interessato ha diritto di opporsi, in tutto o in parte:
+ <ol><li>per motivi legittimi al trattamento dei dati personali che lo riguardano, ancorché pertinenti allo scopo della raccolta</li>
+ <li>al trattamento di dati personali che lo riguardano a fini di invio di materiale pubblicitario o di vendita diretta o per il compimento di ricerche di mercato o di comunicazione commerciale.</li>
+ </ol></li>
+ </ol>
+TOC;
+
+  $extras = array(
+    "extras-1" => "",
+    "extras-2" => "",
+    "extras-3" => "",
+    "extras-4" => "",
+    "extras-5" => "",
+    "extras-6" => "",
+    "extras-7" => "",
+    "extras-8" => "",
+    "extras-9" => "",
+    "extras-10" => "",
+  );
+
+  db_insert('legal_conditions')
+    ->fields(array(
+      'tc_id' => 1,
+      'version' => 1,
+      'revision' => 1,
+      'language' => 'it',
+      'conditions' => $toc,
+      'date' => 1307830571,
+      'extras' => $extras,
+      'changes' => '',
+    ))->execute();
+}
