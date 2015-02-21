@@ -4,7 +4,8 @@ package = DrupalItalia
 core = 7.x
 dependencies[] = migrate
 
-
-#  include the files that contain your Migrate classes
 files[] = drupalitalia_migrations.migrate.inc
-files[] = taxonomy_forum.inc
+files[] = migrations/taxonomy_forum.inc
+files[] = migrations/taxonomy_doc.inc
+files[] = migrations/taxonomy_tags.inc
+files[] = migrations/taxonomy_drupal_version.inc

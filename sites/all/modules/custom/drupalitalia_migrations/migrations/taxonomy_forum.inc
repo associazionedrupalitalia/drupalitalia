@@ -1,17 +1,18 @@
 <?php
 /**
  * @file
- *
+ * Forum sections taxonomy migration.
  */
 class DrupalItaliaTaxonomyForumMigration extends Migration {
 
+  /**
+   * Class constructor.
+   */
   public function __construct($arguments) {
     parent::__construct($arguments);
 
-    // Description.
     $this->description = t('Migrate Forum list from csv file to Forum vocabulary');
 
-    // Mapping Table.
     $this->map = new MigrateSQLMap(
       $this->machineName,
       array(
@@ -57,6 +58,9 @@ class DrupalItaliaTaxonomyForumMigration extends Migration {
     );
   }
 
+  /**
+   * Prepare function for migrated rows.
+   */
   public function prepare($entity, stdClass $row) {
     if (!empty($row->parent)) {
       $v = taxonomy_vocabulary_machine_name_load('forum_structure');
