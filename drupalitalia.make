@@ -151,6 +151,11 @@ projects[views_bulk_operations][version] = "3.2"
 projects[xmlsitemap][subdir] = "contrib"
 projects[xmlsitemap][version] = "2.2"
 
+projects[droopalitalia][type] = "theme"
+projects[droopalitalia][download][type] = "git"
+projects[droopalitalia][download][branch] = "master"
+projects[droopalitalia][download][url] = "https://github.com/associazionedrupalitalia/droopalitalia.git"
+
 ;; Devel
 projects[coder][subdir] = "devel"
 projects[devel][subdir] = "devel"

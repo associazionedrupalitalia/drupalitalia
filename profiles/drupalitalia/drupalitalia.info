@@ -120,3 +120,5 @@ dependencies[] = views_bulk_operations
 dependencies[] = views_ui
 dependencies[] = xmlsitemap
 dependencies[] = xmlsitemap_node
+
+theme = droopalitalia
