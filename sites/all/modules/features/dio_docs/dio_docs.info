@@ -1,0 +1,17 @@
+name = dio_docs
+core = 7.x
+package = Features
+dependencies[] = dio_forum
+dependencies[] = dio_minutes
+dependencies[] = features
+dependencies[] = file
+dependencies[] = options
+dependencies[] = taxonomy
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = taxonomy_vocabulary_16
+features[field_instance][] = comment-comment_node_book-comment_body
+features[field_instance][] = node-book-body
+features[field_instance][] = node-book-taxonomy_vocabulary_16
+features[field_instance][] = node-book-upload
+features[taxonomy][] = argomenti_documentazione
