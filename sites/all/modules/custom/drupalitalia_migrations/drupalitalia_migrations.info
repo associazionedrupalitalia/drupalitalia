@@ -1,0 +1,10 @@
+name = "Migrazioni di produzione per Drupal Italia"
+description = "Dati da tenere allineati tra dev e produzione"
+package = DrupalItalia
+core = 7.x
+dependencies[] = migrate
+
+
+#  include the files that contain your Migrate classes
+files[] = drupalitalia_migrations.migrate.inc
+files[] = taxonomy_forum.inc

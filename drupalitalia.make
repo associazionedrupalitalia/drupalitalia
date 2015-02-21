@@ -103,6 +103,9 @@ projects[link][version] = "1.3"
 projects[mailchimp][subdir] = "contrib"
 projects[mailchimp][version] = "3.2"
 
+projects[migrate][subdir] = "contrib"
+projects[mailchimp][version] = "2.7"
+
 ; projects[mollom][subdir] = "contrib"
 ; projects[mollom][version] = "2.13"
 
