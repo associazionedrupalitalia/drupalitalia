@@ -1,9 +1,0 @@
-name = Drupalitalia News
-core = 7.x
-package = Drupalitalia
-php = 5.2.4
-dependencies[] = features
-dependencies[] = file
-dependencies[] = image
-dependencies[] = taxonomy
-features[features_api][] = api:1
