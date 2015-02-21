@@ -122,5 +122,6 @@ dependencies[] = xmlsitemap
 dependencies[] = xmlsitemap_node
 
 dependencies[] = dio_news
+dependencies[] = dio_glossary
 
 theme = droopalitalia
