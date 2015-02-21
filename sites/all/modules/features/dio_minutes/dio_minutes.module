@@ -1,15 +1,15 @@
 <?php
 /**
  * @file
- * Code for the Verbaili feature.
+ * Code for the dio_minutes feature.
  */
 
-include_once 'association_verbal.features.inc';
+include_once 'dio_minutes.features.inc';
 
 /**
  * Implements hook_permission().
  */
-function association_verbal_permission() {
+function dio_minutes_permission() {
   return array(
     'create verbali content' => array(
       'title' => t('Create verbal content'),
@@ -30,11 +30,10 @@ function association_verbal_permission() {
   );
 }
 
-
 /**
  * Implements hook_node_access().
  */
-function association_verbal_node_access($node, $op, $account) {
+function dio_minutes_node_access($node, $op, $account) {
   $type = is_string($node) ? $node : $node->type;
 
   if ($type == 'verbali') {
