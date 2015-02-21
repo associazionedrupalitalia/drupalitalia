@@ -1,14 +1,21 @@
 <?php
 /**
  * @file
- * drupalitalia_forum.strongarm.inc
+ * dio_forum.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function drupalitalia_forum_strongarm() {
+function dio_forum_strongarm() {
   $export = array();
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'additional_settings__active_tab_forum';
+  $strongarm->value = 'edit-xmlsitemap';
+  $export['additional_settings__active_tab_forum'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -37,6 +44,13 @@ function drupalitalia_forum_strongarm() {
   $strongarm->name = 'advanced_forum_disable_breadcrumbs';
   $strongarm->value = 0;
   $export['advanced_forum_disable_breadcrumbs'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'advanced_forum_forum_disabled';
+  $strongarm->value = FALSE;
+  $export['advanced_forum_forum_disabled'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -70,7 +84,7 @@ function drupalitalia_forum_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'advanced_forum_stats_replies';
-  $strongarm->value = '63457';
+  $strongarm->value = '68086';
   $export['advanced_forum_stats_replies'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -93,7 +107,7 @@ function drupalitalia_forum_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'advanced_forum_style_all_comments';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['advanced_forum_style_all_comments'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -177,7 +191,7 @@ function drupalitalia_forum_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_forum';
-  $strongarm->value = '1';
+  $strongarm->value = 1;
   $export['comment_form_location_forum'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -191,62 +205,15 @@ function drupalitalia_forum_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_forum';
-  $strongarm->value = 1;
+  $strongarm->value = '1';
   $export['comment_preview_forum'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_forum';
-  $strongarm->value = '0';
-  $export['comment_subject_field_forum'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'flatcomments_default_mode_forum';
   $strongarm->value = 0;
-  $export['flatcomments_default_mode_forum'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'flatcomments_remove_reply_link_forum';
-  $strongarm->value = array();
-  $export['flatcomments_remove_reply_link_forum'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'form_build_id_forum';
-  $strongarm->value = 'form-451d55c274355e203983b4137ebea3a7';
-  $export['form_build_id_forum'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'forum_block_num_active';
-  $strongarm->value = '5';
-  $export['forum_block_num_active'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'forum_block_num_new';
-  $strongarm->value = '5';
-  $export['forum_block_num_new'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'forum_containers';
-  $strongarm->value = array(
-    0 => 28,
-    1 => 29,
-    2 => 30,
-    3 => 34,
-  );
-  $export['forum_containers'] = $strongarm;
+  $export['comment_subject_field_forum'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -254,13 +221,6 @@ function drupalitalia_forum_strongarm() {
   $strongarm->name = 'forum_hot_topic';
   $strongarm->value = '15';
   $export['forum_hot_topic'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'forum_nav_vocabulary';
-  $strongarm->value = '2';
-  $export['forum_nav_vocabulary'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -275,13 +235,6 @@ function drupalitalia_forum_strongarm() {
   $strongarm->name = 'forum_per_page';
   $strongarm->value = '25';
   $export['forum_per_page'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'language_content_type_forum';
-  $strongarm->value = '0';
-  $export['language_content_type_forum'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -305,6 +258,7 @@ function drupalitalia_forum_strongarm() {
   $strongarm->name = 'node_options_forum';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_forum'] = $strongarm;
 
@@ -312,7 +266,7 @@ function drupalitalia_forum_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_forum';
-  $strongarm->value = 1;
+  $strongarm->value = '1';
   $export['node_preview_forum'] = $strongarm;
 
   $strongarm = new stdClass();

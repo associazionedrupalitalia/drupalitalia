@@ -112,6 +112,7 @@ dependencies[] = captcha
 ; dependencies[] = honeypot
 dependencies[] = recaptcha
 dependencies[] = googleanalytics
+dependencies[] = strongarm
 dependencies[] = superfish
 ; dependencies[] = userpoints
 dependencies[] = variable
@@ -124,5 +125,6 @@ dependencies[] = xmlsitemap_node
 dependencies[] = dio_news
 dependencies[] = dio_glossary
 dependencies[] = dio_minutes
+dependencies[] = dio_forum
 
 theme = droopalitalia

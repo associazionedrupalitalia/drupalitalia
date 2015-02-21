@@ -3,3 +3,14 @@
  * @file
  * Install, update and uninstall functions for the drupalitalia install profile.
  */
+
+/**
+ * Implements hook_install().
+ */
+function drupalitalia_install() {
+  // We need to override the forum taxonomy to use the legacy one derivated form
+  // Drupal 5 and 6 migration. We can also delete the unrequired vocabulay forum
+  // created by forum module.
+  $forum_vocabulary = taxonomy_vocabulary_machine_name_load('forum_structure');
+  variable_set('forum_nav_vocabulary', $forum_vocabulary->vid);
+}

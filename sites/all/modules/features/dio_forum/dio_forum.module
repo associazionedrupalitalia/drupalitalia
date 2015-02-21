@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the dio_forum feature.
+ */
+
+include_once 'dio_forum.features.inc';
