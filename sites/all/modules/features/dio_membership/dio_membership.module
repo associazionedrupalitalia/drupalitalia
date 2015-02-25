@@ -1,15 +1,5 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the dio_membership feature.
  */
-
-/**
- * Implements hook_default_rules_configuration_alter().
- */
-function dio_membership_default_rules_configuration_alter(&$configs) {
-
-  // if (isset($configs['commerce_checkout_order_email'])) {
-  //   $configs['commerce_checkout_order_email']->active = FALSE;
-  // }
-}
