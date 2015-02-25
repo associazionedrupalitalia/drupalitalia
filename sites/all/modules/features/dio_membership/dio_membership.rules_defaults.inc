@@ -106,8 +106,8 @@ function dio_membership_default_rules_configuration() {
       "LABEL" : "Invia un\\u0027email di notifica dell\\u0027ordine",
       "PLUGIN" : "reaction rule",
       "WEIGHT" : "4",
-      "TAGS" : [ "DIO Membership" ],
       "OWNER" : "rules",
+      "TAGS" : [ "DIO Membership" ],
       "REQUIRES" : [ "rules", "commerce_checkout" ],
       "ON" : { "commerce_checkout_complete" : [] },
       "DO" : [
@@ -163,8 +163,8 @@ function dio_membership_default_rules_configuration() {
       "LABEL" : "Bonifico",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "commerce_payment" ],
       "TAGS" : [ "DIO Membership" ],
+      "REQUIRES" : [ "commerce_payment" ],
       "ON" : { "commerce_payment_methods" : [] },
       "DO" : [
         { "commerce_payment_enable_bank_transfer" : {
@@ -196,8 +196,8 @@ function dio_membership_default_rules_configuration() {
       "LABEL" : "PayPal WPS",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "commerce_payment" ],
       "TAGS" : [ "DIO Membership" ],
+      "REQUIRES" : [ "commerce_payment" ],
       "ON" : { "commerce_payment_methods" : [] },
       "DO" : [
         { "commerce_payment_enable_paypal_wps" : {

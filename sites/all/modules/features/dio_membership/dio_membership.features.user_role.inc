@@ -13,25 +13,25 @@ function dio_membership_user_default_roles() {
   // Exported role: socio effettivo.
   $roles['socio effettivo'] = array(
     'name' => 'socio effettivo',
-    'weight' => '2',
+    'weight' => 2,
   );
 
   // Exported role: socio fondatore.
   $roles['socio fondatore'] = array(
     'name' => 'socio fondatore',
-    'weight' => '3',
+    'weight' => 3,
   );
 
   // Exported role: socio onorario.
   $roles['socio onorario'] = array(
     'name' => 'socio onorario',
-    'weight' => '1',
+    'weight' => 1,
   );
 
   // Exported role: socio sostenitore.
   $roles['socio sostenitore'] = array(
     'name' => 'socio sostenitore',
-    'weight' => '4',
+    'weight' => 4,
   );
 
   return $roles;

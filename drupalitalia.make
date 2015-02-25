@@ -31,8 +31,8 @@ projects[commerce][version] = "1.11"
 projects[commerce_bank_transfer][subdir] = "contrib"
 projects[commerce_bank_transfer][version] = "1.0-alpha3"
 
-; projects[commerce_features][subdir] = "contrib"
-; projects[commerce_features][version] = "1.0"
+projects[commerce_features][subdir] = "contrib"
+projects[commerce_features][version] = "1.0"
 
 projects[commerce_license][subdir] = "contrib"
 projects[commerce_license][version] = "1.3"
