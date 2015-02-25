@@ -3,5 +3,3 @@
  * @file
  * Code for the dio_membership feature.
  */
-
-include_once 'dio_membership.features.inc';
