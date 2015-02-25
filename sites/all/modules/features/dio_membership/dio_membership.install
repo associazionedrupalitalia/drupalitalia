@@ -1,0 +1,29 @@
+<?php
+/**
+ * @file
+ * Code for the dio_membership feature.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function dio_membership_install() {
+  // Disable drupal commerce rules on installation.
+  $rules = array(
+    'commerce_cart_add_to_cart_message',
+    'commerce_checkout_order_email',
+    'commerce_payment_bank_transfer',
+    'commerce_payment_paypal_wps',
+    'rules_drupalitalia_limit_product',
+    'commerce_checkout_order_created_date_update',
+    'rules_commerce_license_update_expiration',
+    'commerce_checkout_new_account',
+    'rules_ordine_completato_al_pagamento',
+  );
+
+  foreach ($rules as $rule_name) {
+    $rules_config = rules_config_load($rule_name);
+    $rules_config->active = FALSE;
+    $rules_config->save();
+  }
+}
