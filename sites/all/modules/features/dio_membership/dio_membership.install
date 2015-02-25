@@ -14,11 +14,8 @@ function dio_membership_install() {
     'commerce_checkout_order_email',
     'commerce_payment_bank_transfer',
     'commerce_payment_paypal_wps',
-    'rules_drupalitalia_limit_product',
     'commerce_checkout_order_created_date_update',
-    'rules_commerce_license_update_expiration',
     'commerce_checkout_new_account',
-    'rules_ordine_completato_al_pagamento',
   );
 
   foreach ($rules as $rule_name) {

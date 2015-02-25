@@ -77,13 +77,13 @@ TOC;
 
   db_insert('legal_conditions')
     ->fields(array(
-      'tc_id' => 1,
+      'tc_id' => 0,
       'version' => 1,
       'revision' => 1,
       'language' => 'it',
       'conditions' => $toc,
       'date' => 1307830571,
-      'extras' => $extras,
+      'extras' => serialize($extras),
       'changes' => '',
     ))->execute();
 }
